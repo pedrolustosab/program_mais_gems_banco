@@ -1,39 +1,37 @@
 # ===================================================================
 # Arquivo de Configuração do Streamlit para o "Programa +GEMS"
-# ===================================================================
-# Este arquivo personaliza a aparência e o comportamento do aplicativo.
-# Coloque-o em uma pasta chamada .streamlit na raiz do seu projeto.
+# TEMA CLARO
 # ===================================================================
 
 [theme]
-# Cor principal usada para widgets interativos (botões, seletores, etc.)
-primaryColor = "#8A5CF5" # Um roxo vibrante, como uma ametista
+# A MUDANÇA MAIS IMPORTANTE: Define o tema base como "claro".
+base = "light"
 
-# Cor de fundo principal do aplicativo
-backgroundColor = "#1E1E2E" # Um azul escuro / tom de ardósia, como uma noite estrelada
+# Cor principal usada para botões, seletores, e outros widgets.
+# Um azul vibrante e profissional que funciona bem em fundos claros.
+primaryColor = "#0068C9"
 
-# Cor de fundo para elementos como a barra lateral e expanders
-secondaryBackgroundColor = "#2E2E4A" # Um tom um pouco mais claro que o fundo principal
+# Cor de fundo principal do aplicativo.
+# Um cinza muito claro para ser mais suave aos olhos que o branco puro.
+backgroundColor = "#F0F2F6"
 
-# Cor principal do texto
-textColor = "#FFFFFF" # Branco para bom contraste no fundo escuro
+# Cor de fundo para a barra lateral, expanders, e outros elementos secundários.
+# Branco puro para criar um contraste limpo com o fundo principal.
+secondaryBackgroundColor = "#FFFFFF"
 
-# Fonte a ser usada. Você pode escolher entre "sans serif", "serif", ou "monospace".
+# Cor do texto principal.
+# Um cinza escuro para ótima legibilidade, menos agressivo que o preto puro.
+textColor = "#31333F"
+
+# Família da fonte. "sans serif" é uma escolha moderna e limpa.
 font = "sans serif"
 
 
 [server]
 # Desativa a coleta de estatísticas de uso anônimas pelo Streamlit.
-# Recomendado para privacidade.
 gatherUsageStats = false
-
-# Permite que o servidor rode em modo "headless", o que é útil para
-# implantações em contêineres como o Docker.
+# Permite que o servidor rode em modo "headless".
 headless = true
-
-# Define a porta em que o aplicativo será executado localmente.
-# O padrão é 8501. Mude apenas se necessário.
-# port = 8501
 
 
 [client]
