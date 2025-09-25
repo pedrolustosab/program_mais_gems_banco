@@ -1,7 +1,40 @@
+# ===================================================================
+# Requisitos para o Aplicativo Streamlit "Programa +GEMS"
+# ===================================================================
+# Para instalar todas as dependências de uma vez, execute no terminal:
+# pip install -r requirements.txt
+# ===================================================================
+
+# --- Core Framework ---
+# A biblioteca principal para construir a interface web interativa.
 streamlit>=1.28.0
+
+# --- Manipulação de Dados ---
+# Essencial para trabalhar com DataFrames (tabelas de dados).
 pandas>=2.0.0
-plotly>=5.15.0
+
+# --- Conexão com Banco de Dados ---
+# Driver para conectar o Python ao banco de dados PostgreSQL.
+psycopg2-binary
+
+# --- Configuração e Ambiente ---
+# Para carregar credenciais e senhas de forma segura do arquivo .env.
 python-dotenv>=1.0.0
-plotly-express
+
+# --- Visualização de Dados e Gráficos ---
+# A principal biblioteca para criar gráficos interativos.
+# Nota: 'plotly-express' já está incluído dentro do pacote 'plotly'.
+plotly>=5.15.0
+
+# Para capturar eventos de clique em gráficos Plotly dentro do Streamlit.
 streamlit-plotly-events
+
+# --- Manipulação de Imagens ---
+# Usada para abrir e processar arquivos de imagem (ícones, banners, etc.).
+Pillow
+
+# --- Exportação para Excel ---
+# Motores que o Pandas usa para escrever arquivos no formato .xlsx.
+# Ter ambos garante compatibilidade. 'openpyxl' é o mais comum.
+openpyxl
 xlsxwriter

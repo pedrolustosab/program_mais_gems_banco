@@ -3,6 +3,7 @@ from pathlib import Path
 from PIL import Image
 
 # === CONFIGURAÇÃO DA PÁGINA ===
+# Deve ser o primeiro comando Streamlit no seu script
 st.set_page_config(
     page_title="Programa +GEMS",
     page_icon="💎",
@@ -10,7 +11,17 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# === CSS SIMPLES (somente estética básica) ===
+# === LÓGICA DE LOGIN (APENAS PARA FEEDBACK VISUAL) ===
+# Adicionamos um feedback visual na barra lateral se o admin já estiver logado.
+# A página em si permanece pública.
+st.sidebar.title("Navegação")
+if st.session_state.get("authenticated", False):
+    st.sidebar.success("✅ Acesso de Administrador Ativo")
+else:
+    st.sidebar.info("Selecione uma página para começar.")
+
+
+# === CSS SIMPLES (do seu script original) ===
 st.markdown(
     """
     <style>
@@ -31,7 +42,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# === UTILIDADES ===
+# === UTILIDADES (do seu script original) ===
 @st.cache_data(show_spinner=False)
 def load_image(path: str):
     """Carrega imagem com cache para melhorar performance."""
@@ -45,13 +56,13 @@ def safe_image_display(img, caption=None):
     if img:
         st.image(img, use_container_width=True, caption=caption)
     else:
-        # fallback: poderia ser outra imagem ("placeholder.png") ou só aviso
-        st.warning("Imagem não encontrada — substitua 'Capa.png' por um arquivo válido.")
+        # Garanta que você tenha um arquivo "Capa.png" no mesmo diretório
+        st.warning("Imagem 'Capa.png' não encontrada. Verifique o caminho do arquivo.")
 
-# === CABEÇALHO (Hero) ===
+# === CABEÇALHO E CONTEÚDO PRINCIPAL (do seu script original) ===
 hero_col, banner_col = st.columns([1.5, 1], gap="large")
 with hero_col:
-    st.markdown('<div class="hero-title">💎 Bem-vindo ao Programa Mais GEMS</div>', unsafe_allow_html=True)
+    st.markdown('<div class="hero-title">💎 Bem-vindo ao Programa +GEMS</div>', unsafe_allow_html=True)
     st.markdown("**Sua jornada de reconhecimento e missões começa aqui.**")
     st.write("")
     st.markdown(
@@ -59,15 +70,17 @@ with hero_col:
         Este é o nosso universo de gamificação, criado para **valorizar cada conquista**
         e fortalecer o espírito de equipe.
 
-        Aqui, cada GEMA representa um reconhecimento, e cada Herói é uma peça 
+        Aqui, cada Cristal representa um reconhecimento, e cada Herói é uma peça 
         fundamental da nossa história.
+        
+        ---
+        
+        **As páginas com os ícones 👑 e 🔑 na barra lateral requerem senha de administrador.**
         """
     )
-    st.info("Use o menu na barra lateral para explorar todas as seções!", icon="👈")
+    
 
 with banner_col:
+    # Tente carregar a imagem. Certifique-se de que o arquivo "Capa.png" existe!
     img = load_image("Capa.png")
     safe_image_display(img, caption="Celebre, reconheça e conquiste.")
-
-
-

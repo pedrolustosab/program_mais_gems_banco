@@ -1,0 +1,41 @@
+# ===================================================================
+# Arquivo de Configuração do Streamlit para o "Programa +GEMS"
+# ===================================================================
+# Este arquivo personaliza a aparência e o comportamento do aplicativo.
+# Coloque-o em uma pasta chamada .streamlit na raiz do seu projeto.
+# ===================================================================
+
+[theme]
+# Cor principal usada para widgets interativos (botões, seletores, etc.)
+primaryColor = "#8A5CF5" # Um roxo vibrante, como uma ametista
+
+# Cor de fundo principal do aplicativo
+backgroundColor = "#1E1E2E" # Um azul escuro / tom de ardósia, como uma noite estrelada
+
+# Cor de fundo para elementos como a barra lateral e expanders
+secondaryBackgroundColor = "#2E2E4A" # Um tom um pouco mais claro que o fundo principal
+
+# Cor principal do texto
+textColor = "#FFFFFF" # Branco para bom contraste no fundo escuro
+
+# Fonte a ser usada. Você pode escolher entre "sans serif", "serif", ou "monospace".
+font = "sans serif"
+
+
+[server]
+# Desativa a coleta de estatísticas de uso anônimas pelo Streamlit.
+# Recomendado para privacidade.
+gatherUsageStats = false
+
+# Permite que o servidor rode em modo "headless", o que é útil para
+# implantações em contêineres como o Docker.
+headless = true
+
+# Define a porta em que o aplicativo será executado localmente.
+# O padrão é 8501. Mude apenas se necessário.
+# port = 8501
+
+
+[client]
+# Garante que a barra de navegação com as páginas seja sempre visível.
+showSidebarNavigation = true
