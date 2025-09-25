@@ -19,7 +19,7 @@ def get_db_connection():
             database=os.getenv("SUPABASE_DATABASE"),
             user=os.getenv("SUPABASE_USER"),
             password=os.getenv("SUPABASE_KEY"),
-            port=5432
+            port=os.getenv("SUPABASE_PORT")
         )
         return conn
     except psycopg2.OperationalError as e:
