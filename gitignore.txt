@@ -15,8 +15,8 @@
 # Mantenha o repositório leve, ignorando as bibliotecas instaladas.
 venv/
 .venv/
-env/
-.env/
+env
+.env
 
 
 # --- Cache e Arquivos Gerados pelo Python ---
